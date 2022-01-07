@@ -96,7 +96,7 @@ describe("Create Statement", ()=>{
       password: "1234",
     });
 
-    const statement = await createStatementUseCase.execute({
+    await createStatementUseCase.execute({
       user_id: String(user.id),
       amount: 100,
       description: "Conta de luz",
@@ -106,7 +106,7 @@ describe("Create Statement", ()=>{
     await expect(
       createStatementUseCase.execute({
         user_id: String(user.id),
-        amount: 100,
+        amount: 150,
         description: "Conta da água",
         type: OperationType.WITHDRAW,
       })
