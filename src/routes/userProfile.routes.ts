@@ -8,6 +8,6 @@ const showUserProfileController = new ShowUserProfileController();
 
 userProfileRouter.use(ensureAuthenticated);
 
-userProfileRouter.get('/', showUserProfileController.execute);
+userProfileRouter.get('/', ensureAuthenticated, showUserProfileController.execute);
 
 export { userProfileRouter };
